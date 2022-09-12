@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- METADATA -->
 <head>
-    <title>Title</title>
+    <title>Vue JS Practice</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8">
@@ -53,6 +53,23 @@
         <div class="userInfo d-flex flow">
             <label for="userName">Name</label>
             <input v-model="userName" type="text" name="userName" id="userName" />
+        </div>
+
+        <div class="card-container container d-flex">
+            <div class="card d-flex">
+                <div class="infoEdit active flow">
+                    <input v-model="name" class="editContent" type="text" placeholder="Name" required>
+                    <input v-model="age" class="editContent" type="text" placeholder="Age" required>
+                    <input v-model="nationality" class="editContent" type="text" placeholder="Nationality" required>
+                    <button id="confirmBtn" class="editInfo" type="button">Confirm</button>
+                </div>
+                <div class="info flow">
+                    <p>{{ name }}</p>
+                    <p>{{ age }}</p>
+                    <p>{{ nationality }}</p>
+                    <button id="editBtn" class="editInfo" type="button">Edit</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

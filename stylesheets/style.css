@@ -2,6 +2,13 @@
 /*#region GENERAL DEFAULTS  */
 body {
     font: var(--fontweight-default) var(--fontsize-default) var(--fontfamily-default);
+    min-height: 100vh;
+    color: var(--clr-light-grey);
+    background: linear-gradient(
+        -0.6turn,
+        var(--clr-dark),
+        var(--clr-darker)
+    );
 }
 /*#endregion GENERAL DEFAULTS  */
 /* --------------------------------------------------------------------------------- */
@@ -17,12 +24,38 @@ body {
 
 .container {
     padding: 1rem;
+    width: 75%;
     max-width: 75ch;
     margin: 0 auto;
 }
 
 .d-flex {
     display: flex;
+}
+
+
+
+.card-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--clr-secondary);
+    width: 30%;
+    min-width: 400px;
+    aspect-ratio: 9 / 16;
+    border-radius: .5em;
+}
+
+.editContent {
+    background-color: transparent;
+    color: var(--clr-light-grey);
+    border: none;
+    border-bottom: 2px solid var(--clr-light-grey);
+    text-align: center;
+    width: 100%;
+    padding: .4em;
 }
 /*#endregion UTILITIES */
 /* --------------------------------------------------------------------------------- */
@@ -46,6 +79,45 @@ body {
 
 /* --------------------------------------------------------------------------------- */
 /*#region BLOCKS: component specific rules */
+
+.card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info,
+.infoEdit {
+    display: none;
+    width: 100%;
+}
+
+.info > * {
+    width: 100%;
+    border-bottom: 2px solid var(--clr-light-grey);
+    text-align: center;
+    padding: .4em;
+    color: var(--clr-white);
+    font-weight: bold;
+}
+
+.info.active,
+.infoEdit.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editInfo {
+    width: 60%;
+    margin: 1em auto;
+    border-radius: .5em;
+    padding: .3em 1em;
+    color: var(--clr-dark);
+    font-weight: 400;
+    cursor: pointer;
+}
 /*#endregion BLOCKS: component specific rules */
 /* --------------------------------------------------------------------------------- */
 
